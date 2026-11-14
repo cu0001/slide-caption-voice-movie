@@ -1,0 +1,41 @@
+{
+  "name": "slide-caption-voice-movie",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Canvas slides with Irodori-TTS narration and native VP8/Opus WebM export; no MPEG codec calls, FFmpeg, or Remotion",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npm run audit:dependencies && vite --host 127.0.0.1 --open",
+    "build": "npm run audit:dependencies && tsc --noEmit && vite build && node -e \"require('fs').rmSync('dist/examples/startup',{recursive:true,force:true})\"",
+    "preview": "vite preview --host 127.0.0.1",
+    "audit:dependencies": "node scripts/audit-dependencies.mjs && node scripts/copy-notices.mjs",
+    "test": "playwright test",
+    "captions:export": "node scripts/captions-export.mjs",
+    "captions:apply": "node --experimental-strip-types --no-warnings=ExperimentalWarning scripts/captions-apply.mjs",
+    "voice:generate": "node --experimental-strip-types --no-warnings=ExperimentalWarning scripts/voice-generate.mjs",
+    "reading": "node scripts/reading.mjs",
+    "pdf:project": "node scripts/pdf-project.mjs",
+    "elements:build": "node scripts/elements-build.mjs",
+    "elements:tune": "node --experimental-strip-types --no-warnings=ExperimentalWarning scripts/elements-tune.mjs",
+    "startup:set": "node --experimental-strip-types --no-warnings=ExperimentalWarning scripts/startup-set.mjs",
+    "video:export": "node scripts/video-export.mjs",
+    "video:check": "node scripts/video-check.mjs",
+    "colors": "node scripts/pixel-colors.mjs",
+    "samples:prepare": "node --experimental-strip-types --no-warnings=ExperimentalWarning scripts/prepare-samples.mjs"
+  },
+  "dependencies": {
+    "mediabunny": "1.62.1",
+    "pdf-lib": "1.17.1",
+    "pdfjs-dist": "6.4.299",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "typescript": "5.9.3",
+    "vite": "8.3.5"
+  }
+}

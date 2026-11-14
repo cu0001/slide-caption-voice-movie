@@ -1,0 +1,189 @@
+/* Colours follow the videos the app makes (deep green stage, soft lime and peach), in a light and a dark set. */
+:root{
+  --ink:#1c2a2b;--muted:#56646a;--line:#dde3e1;--line-strong:#b4c0bd;
+  --bg:#f3f5f3;--panel:#fff;--field:#fff;
+  --accent:#1f6355;--accent-strong:#174c41;--on-accent:#fff;--accent-soft:#e3f0ea;
+  --error-ink:#8c2f17;--error-bg:#fbeae4;--done-ink:#1d5a3f;--done-bg:#e4f2ea;
+  --stage:#0d1f23;--stage-bar:#152a2f;--stage-ink:#e6ece8;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  font-size:14px;line-height:1.5;color:var(--ink);background:var(--bg);font-synthesis:none;color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ink:#e7ecea;--muted:#a3b0ae;--line:#2c3b3d;--line-strong:#4a5d5e;
+    --bg:#121b1d;--panel:#1a2527;--field:#121b1d;
+    --accent:#8fd3ba;--accent-strong:#a9e0cb;--on-accent:#0d2620;--accent-soft:#1f3a35;
+    --error-ink:#f5b9a6;--error-bg:#43221a;--done-ink:#a9e0c2;--done-bg:#1c3a2c;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.icon{display:block;flex:none}
+
+/* Buttons */
+button,.button,select{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  min-height:36px;padding:0 14px;border:1px solid var(--line-strong);border-radius:8px;
+  background:var(--panel);cursor:pointer;white-space:nowrap;
+}
+button:hover:not(:disabled),.button:hover,select:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+button:disabled,select:disabled{opacity:.45;cursor:default}
+.button:has(input:disabled){opacity:.45;pointer-events:none}
+.button:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+input[type=file]{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.quiet{border-color:transparent;background:transparent}
+.quiet:hover:not(:disabled){background:var(--accent-soft);border-color:transparent}
+.icon-button{padding:0;width:36px}
+.second{border-color:var(--accent);color:var(--accent);font-weight:600}
+.second:hover:not(:disabled){background:var(--accent-soft)}
+.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:600}
+.primary:hover:not(:disabled){background:var(--accent-strong);border-color:var(--accent-strong);color:var(--on-accent)}
+.link{min-height:28px;padding:0 6px;border:0;background:none;color:var(--accent);font-size:13px}
+.link:hover:not(:disabled){text-decoration:underline}
+
+/* Frame: header, three columns that scroll on their own, footer */
+.app{display:grid;grid-template-rows:auto minmax(0,1fr) auto;height:100dvh}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:var(--panel);border-bottom:1px solid var(--line)}
+.title{min-width:0}
+.title span{font-size:12px;color:var(--muted)}
+.title h1{margin:0;font-size:17px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.actions{display:flex;flex:none;align-items:center;gap:6px}
+.actions .divider{width:1px;height:22px;margin:0 6px;background:var(--line)}
+.speed{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.speed select{padding:0 8px;color:var(--ink)}
+main{display:grid;grid-template-columns:188px minmax(0,1fr) 384px;min-height:0}
+footer{display:flex;justify-content:space-between;gap:16px;padding:8px 20px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);background:var(--panel)}
+
+/* Left: every slide */
+.filmstrip{display:flex;flex-direction:column;min-height:0;border-right:1px solid var(--line)}
+.meta{display:flex;flex-direction:column;gap:2px;margin:0;padding:14px 16px 10px;color:var(--muted);font-size:12px}
+.meta .ready{display:flex;align-items:center;gap:6px}
+.meta .ready::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--line-strong)}
+.meta .ready.on::before{background:#3fa37f}
+.slides{list-style:none;margin:0;padding:2px 10px 14px;flex:1;min-height:0;overflow:auto;position:relative;display:flex;flex-direction:column;gap:6px}
+.slides button{display:block;width:100%;height:auto;min-height:0;padding:5px;border:2px solid transparent;border-radius:8px;background:transparent;text-align:left;white-space:normal}
+.slides button:hover:not(:disabled){background:var(--accent-soft);border-color:transparent;color:inherit}
+.slides button[aria-current=true]{border-color:var(--accent);background:var(--panel)}
+.thumb{display:block;aspect-ratio:16/9;border-radius:5px;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.slide-label{display:flex;gap:6px;align-items:baseline;font-size:12px;color:var(--muted);padding:4px 2px 0}
+.slide-label b{font-size:13px;color:var(--ink)}
+.slide-label{flex-wrap:wrap}
+.stale{padding:0 5px;border-radius:4px;background:var(--error-bg);color:var(--error-ink);font-size:11px;font-style:normal;font-weight:600}
+.second .count{min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--error-ink);color:var(--error-bg);font-size:12px;line-height:20px;text-align:center}
+
+/* Middle: preview, slide stepping, messages, the exported video */
+.stage{min-width:0;overflow:auto;padding:20px 24px;display:flex;flex-direction:column;gap:12px}
+.stage>*{width:100%;max-width:max(360px,calc((100dvh - 290px)*16/9));margin:0 auto}
+.preview{border-radius:10px;overflow:hidden;background:var(--stage);box-shadow:0 1px 2px #0002,0 8px 24px #0d1f2326}
+.pager{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px}
+.pager button{padding:0 12px 0 8px;font-weight:600}
+.pager button:last-child{padding:0 8px 0 12px}
+.pager-position{text-align:center;line-height:1.3;color:var(--muted)}
+.pager-position strong{font-size:20px;color:var(--ink)}
+.pager-position small{display:block;font-size:12px}
+.status{padding:9px 12px;border-radius:8px;background:var(--panel);border:1px solid var(--line)}
+.status.error{background:var(--error-bg);border-color:transparent;color:var(--error-ink)}
+.status.done{background:var(--done-bg);border-color:transparent;color:var(--done-ink)}
+.warning{margin:0;padding:8px 12px;border-radius:8px;background:var(--error-bg);color:var(--error-ink);font-size:13px;line-height:1.6}
+.render-progress{display:flex;gap:10px;align-items:center}
+.render-progress progress{flex:1;height:8px;accent-color:var(--accent)}
+.output{padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.output h2{font-size:14px;margin:0 0 8px}
+.output .hint{margin-bottom:8px}
+.output video{display:block;width:100%;border-radius:6px;background:#000}
+.output a{display:inline-block;margin-top:8px;color:var(--accent)}
+
+/* Right: the selected slide's captions */
+aside{min-height:0;overflow:auto;padding:16px 20px 24px;background:var(--panel);border-left:1px solid var(--line)}
+.aside-heading{display:flex;justify-content:space-between;align-items:baseline;font-size:15px;font-weight:600;margin:0 0 12px}
+.aside-heading span{font-size:13px;font-weight:400;color:var(--muted)}
+.caption-editor{display:flex;flex-direction:column;gap:14px}
+.caption-item{display:flex;flex-direction:column;gap:6px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.caption-item label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+.caption-editor textarea{width:100%;resize:none;field-sizing:content;min-height:calc(2lh + 18px);border:1px solid var(--line-strong);border-radius:8px;padding:8px 10px;font-size:15px;line-height:1.55;color:var(--ink);background:var(--field)}
+.caption-editor textarea:focus-visible,.timing input:focus-visible{outline-offset:0;border-color:var(--accent)}
+.caption-editor [aria-invalid=true]{border-color:var(--error-ink)}
+.timing{display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:28px;font-size:12px;color:var(--muted)}
+.timing label{flex-direction:row!important;align-items:center}
+.timing input{width:58px;margin:0 3px;border:1px solid var(--line-strong);border-radius:6px;padding:3px 6px;font-size:13px;color:var(--ink);background:var(--field)}
+.timing .link{margin-left:auto}
+.caption-head{display:flex;align-items:center;gap:6px}
+.caption-head .length{margin-left:auto;font-variant-numeric:tabular-nums}
+.caption-head .length.near{color:var(--error-ink);font-weight:600}
+.caption-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:2px;margin:-2px -6px 0 0}
+/* The caption on screen in the preview */
+.caption-item{position:relative}
+.caption-item[aria-current=true]::before{content:"";position:absolute;left:-12px;top:0;bottom:14px;width:3px;border-radius:2px;background:var(--accent)}
+.hint{margin:0;color:var(--muted);font-size:12px;line-height:1.6}
+.caption-item .changed{padding:1px 6px;border-radius:4px;background:var(--error-bg);color:var(--error-ink);font-weight:600}
+/* The rewrite box holds a line per caption, so it starts taller. */
+.rewrite textarea{min-height:calc(5lh + 18px)}
+.rewrite summary{cursor:pointer;color:var(--accent);font-size:13px}
+.rewrite[open]{display:flex;flex-direction:column;gap:8px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+
+/* Player */
+.canvas-player{position:relative;background:var(--stage)}
+.canvas-player>canvas{display:block;width:100%;aspect-ratio:16/9}
+.player-controls{display:flex;align-items:center;gap:4px;padding:6px 8px 2px;background:var(--stage-bar);color:var(--stage-ink)}
+.player-controls button{min-width:36px;padding:0 8px;border:0;border-radius:6px;background:transparent;color:var(--stage-ink);font-size:12px}
+.player-controls button:hover:not(:disabled){background:#ffffff1f;color:#fff}
+.player-controls button:last-child{margin-left:auto}
+.player-controls span{margin-left:6px;font-size:13px;font-variant-numeric:tabular-nums}
+.player-volume{width:76px;height:14px;margin:0 4px;background:transparent;cursor:pointer;-webkit-appearance:none;appearance:none}
+.player-volume::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:#ffffff38}
+.player-volume::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;margin-top:-4px;border-radius:50%;background:var(--stage-ink);border:0}
+.player-volume::-moz-range-track{height:4px;border-radius:2px;background:#ffffff38}
+.player-volume::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--stage-ink);border:0}
+.player-track{position:relative;padding:4px 14px 12px;background:var(--stage-bar)}
+.player-seek{display:block;width:100%;height:14px;margin:0;background:transparent;cursor:pointer;-webkit-appearance:none;appearance:none}
+.player-seek::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:#ffffff38}
+.player-seek::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;margin-top:-5px;border-radius:50%;background:#bfe6a4;border:0}
+.player-seek::-moz-range-track{height:4px;border-radius:2px;background:#ffffff38}
+.player-seek::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#bfe6a4;border:0}
+/* The thumb's centre travels from 7px to 7px short of the ends, so slide boundaries are placed inside that span. */
+.player-marks{position:absolute;left:21px;right:21px;top:4px;height:14px;pointer-events:none}
+.player-marks i{position:absolute;top:1px;bottom:1px;width:2px;margin-left:-1px;border-radius:1px;background:#ffffff8c}
+.player-error{margin:0;padding:8px 12px;background:var(--stage-bar);color:#f3d6ad;font-size:13px}
+.canvas-player:fullscreen{display:flex;flex-direction:column;justify-content:center}
+.canvas-player:fullscreen>canvas{max-height:85vh;object-fit:contain}
+
+/* Shown while a file is dragged over the window */
+.drop-hint{position:fixed;inset:12px;z-index:10;display:grid;place-items:center;border:3px dashed var(--accent);border-radius:16px;background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--accent);font-size:18px;font-weight:600;pointer-events:none}
+.render-progress span{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* Licences */
+.license-link{min-height:0;font-size:12px;border:0;background:none;padding:0;text-decoration:underline;color:var(--muted)}
+.license-dialog{color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:24px;max-width:620px;width:calc(100% - 32px);max-height:85vh;line-height:1.8}
+.license-dialog::backdrop{background:#0008}
+.license-dialog h2{font-size:17px}
+.license-dialog dt{font-weight:600;margin-top:12px}
+.license-dialog dd{margin-left:0}
+.license-dialog p{font-size:13px}
+.license-files{display:flex;flex-direction:column;gap:7px;margin:20px 0}
+.license-files a{color:var(--accent)}
+.license-dialog form{text-align:right}
+
+/* Medium widths: slimmer side columns, so the preview keeps most of the width. */
+@media (max-width:1280px){
+  main{grid-template-columns:148px minmax(0,1fr) 328px}
+  .stage{padding:16px}
+}
+/* Narrow screens: one column that scrolls as a page; the slides become a strip under the preview. */
+@media (max-width:900px){
+  .app{height:auto;min-height:100dvh}
+  header{flex-wrap:wrap;padding:10px 16px}
+  .actions{flex:1 1 100%;flex-wrap:wrap}
+  .actions .divider{display:none}
+  main{grid-template-columns:minmax(0,1fr)}
+  .stage{order:1;overflow:visible;padding:16px}
+  .stage>*{max-width:none}
+  .filmstrip{order:2;border-right:0;border-top:1px solid var(--line)}
+  .meta{flex-direction:row;justify-content:space-between;padding:10px 16px 6px}
+  .slides{flex-direction:row;padding:2px 12px 12px}
+  .slides li{flex:0 0 132px}
+  aside{order:3;overflow:visible;border-left:0;border-top:1px solid var(--line);padding:16px}
+}

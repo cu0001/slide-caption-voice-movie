@@ -1,0 +1,22 @@
+{
+  "checkedOn": "2026-10-26",
+  "lockfilePackages": 72,
+  "installedPackages": 38,
+  "forbiddenDependencies": [],
+  "forbiddenBinaries": [],
+  "unreviewedLicenses": [],
+  "unshippedPdfParserWasm": [
+    "node_modules/pdfjs-dist/wasm/jbig2.wasm",
+    "node_modules/pdfjs-dist/wasm/openjpeg.wasm",
+    "node_modules/pdfjs-dist/wasm/qcms_bg.wasm",
+    "node_modules/pdfjs-dist/wasm/quickjs-eval.wasm"
+  ],
+  "pdfPolicy": "PDF.js useWasm:false; public/pdf-assets allowlist excludes WASM and font binaries",
+  "output": {
+    "container": "webm",
+    "video": "vp8",
+    "audio": "opus"
+  },
+  "audioInput": "RIFF WAV, PCM / IEEE float only; custom parser",
+  "scope": "Application packages and files; not browser/OS implementation, external patent clearance, or user media rights."
+}

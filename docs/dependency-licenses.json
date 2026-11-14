@@ -1,0 +1,442 @@
+[
+  {
+    "name": "@napi-rs/canvas",
+    "version": "1.0.13",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Brooooooklyn/canvas.git"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "@napi-rs/canvas-darwin-arm64",
+    "version": "1.0.13",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Brooooooklyn/canvas.git"
+    },
+    "licenseFiles": []
+  },
+  {
+    "name": "@oxc-project/types",
+    "version": "0.155.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/oxc-project/oxc.git",
+      "directory": "npm/oxc-types"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "@pdf-lib/standard-fonts",
+    "version": "1.0.0",
+    "license": "MIT",
+    "repository": "https://github.com/Hopding/standard-fonts.git",
+    "licenseFiles": [
+      "LICENSE.md"
+    ]
+  },
+  {
+    "name": "@pdf-lib/upng",
+    "version": "1.0.1",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Hopding/upng"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "@playwright/test",
+    "version": "1.56.1",
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/microsoft/playwright.git"
+    },
+    "licenseFiles": [
+      "LICENSE",
+      "NOTICE"
+    ]
+  },
+  {
+    "name": "@rolldown/binding-darwin-arm64",
+    "version": "1.2.15",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/rolldown/rolldown.git",
+      "directory": "packages/rolldown"
+    },
+    "licenseFiles": []
+  },
+  {
+    "name": "@rolldown/pluginutils",
+    "version": "1.0.1",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/rolldown/plugins.git",
+      "directory": "packages/pluginutils"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "@types/dom-mediacapture-transform",
+    "version": "0.1.12",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "directory": "types/dom-mediacapture-transform"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "@types/dom-webcodecs",
+    "version": "0.1.13",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "directory": "types/dom-webcodecs"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "@types/react",
+    "version": "19.2.2",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "directory": "types/react"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "@types/react-dom",
+    "version": "19.2.2",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "directory": "types/react-dom"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "csstype",
+    "version": "3.2.3",
+    "license": "MIT",
+    "repository": "https://github.com/frenic/csstype",
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "detect-libc",
+    "version": "2.1.2",
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/lovell/detect-libc.git"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "fdir",
+    "version": "6.5.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/thecodrr/fdir.git"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "fsevents",
+    "version": "2.3.2",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/fsevents/fsevents.git"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "lightningcss",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/parcel-bundler/lightningcss.git"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "lightningcss-darwin-arm64",
+    "version": "1.33.0",
+    "license": "MPL-2.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/parcel-bundler/lightningcss.git"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "mediabunny",
+    "version": "1.62.1",
+    "license": "MPL-2.0",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Vanilagy/mediabunny.git"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "nanoid",
+    "version": "3.3.20",
+    "license": "MIT",
+    "repository": "ai/nanoid",
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "pako",
+    "version": "1.0.11",
+    "license": "(MIT AND Zlib)",
+    "repository": "nodeca/pako",
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "pdf-lib",
+    "version": "1.17.1",
+    "license": "MIT",
+    "repository": "git+https://github.com/Hopding/pdf-lib.git",
+    "licenseFiles": [
+      "LICENSE.md"
+    ]
+  },
+  {
+    "name": "pdfjs-dist",
+    "version": "6.4.299",
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/mozilla/pdf.js.git"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "picocolors",
+    "version": "1.1.1",
+    "license": "ISC",
+    "repository": "alexeyraspopov/picocolors",
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "picomatch",
+    "version": "4.0.7",
+    "license": "MIT",
+    "repository": "micromatch/picomatch",
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "playwright",
+    "version": "1.56.1",
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/microsoft/playwright.git"
+    },
+    "licenseFiles": [
+      "LICENSE",
+      "NOTICE"
+    ]
+  },
+  {
+    "name": "playwright-core",
+    "version": "1.56.1",
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/microsoft/playwright.git"
+    },
+    "licenseFiles": [
+      "LICENSE",
+      "NOTICE"
+    ]
+  },
+  {
+    "name": "postcss",
+    "version": "8.5.31",
+    "license": "MIT",
+    "repository": "postcss/postcss",
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "react",
+    "version": "19.2.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/facebook/react.git",
+      "directory": "packages/react"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "react-dom",
+    "version": "19.2.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/facebook/react.git",
+      "directory": "packages/react-dom"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "rolldown",
+    "version": "1.2.15",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/rolldown/rolldown.git",
+      "directory": "packages/rolldown"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "scheduler",
+    "version": "0.27.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/facebook/react.git",
+      "directory": "packages/scheduler"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "source-map-js",
+    "version": "1.2.2",
+    "license": "BSD-3-Clause",
+    "repository": "7rulnik/source-map-js",
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "tinyglobby",
+    "version": "0.2.17",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/SuperchupuDev/tinyglobby.git"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "tslib",
+    "version": "1.14.1",
+    "license": "0BSD",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Microsoft/tslib.git"
+    },
+    "licenseFiles": [
+      "LICENSE.txt"
+    ]
+  },
+  {
+    "name": "typescript",
+    "version": "5.9.3",
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/TypeScript.git"
+    },
+    "licenseFiles": [
+      "LICENSE.txt"
+    ]
+  },
+  {
+    "name": "vite",
+    "version": "8.3.5",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/vitejs/vite.git",
+      "directory": "packages/vite"
+    },
+    "licenseFiles": [
+      "LICENSE.md"
+    ]
+  },
+  {
+    "name": "fsevents",
+    "version": "2.3.3",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/fsevents/fsevents.git"
+    },
+    "licenseFiles": [
+      "LICENSE"
+    ]
+  }
+]
